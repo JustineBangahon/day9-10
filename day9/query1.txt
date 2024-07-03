@@ -1,0 +1,5 @@
+SELECT CONCAT(tbl_customer_info.fName, ', ',tbl_customer_info.lName, ' ', tbl_customer_info.mName) as f_name, tbl_movie_info.title, tbl_rents_info.requestedQty
+FROM ((tbl_rents_info
+      JOIN tbl_customer_info ON tbl_rents_info.tbl_customer_info_id = tbl_customer_info.id)
+     JOIN tbl_movie_info ON tbl_rents_info.tbl_movie_info_id = tbl_movie_info.id)
+GROUP BY f_name, tbl_movie_info.title, tbl_rents_info.requestedQty

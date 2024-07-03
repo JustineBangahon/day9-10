@@ -1,0 +1,4 @@
+SELECT tbl_rents_info.id, CONCAT(tbl_customer_info.fName, ', ',tbl_customer_info.lName, ' ', tbl_customer_info.mName) as full_name
+FROM tbl_customer_info
+LEFT JOIN tbl_rents_info ON tbl_rents_info.tbl_customer_info_id = tbl_customer_info.id
+WHERE tbl_rents_info.id IS NULL
